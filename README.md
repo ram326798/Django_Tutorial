@@ -39,3 +39,14 @@ cd projectName
 Step 6:To run Django application
 
 Python manage.py runserver
+
+Step7 :To create sub application under main application
+
+python manage.py startapp calc
+
+
+Flow:
+~~~~
+1.project starts from urls.py
+2.from there to include urls.
+3.from there to views
