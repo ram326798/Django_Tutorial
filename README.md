@@ -44,6 +44,36 @@ Step7 :To create sub application under main application
 
 python manage.py startapp calc
 
+Step 8 : In order to make static folder into django first add that folder in setings.py then give the below command from root directory
+
+python manage.py collectstatic
+
+Step 9: To install sql in your django application
+
+pip install mysql
+
+Step 10: To create tables in database automatically using orm create model and add database details in settings.py
+
+Eg:
+
+class Destination(models.Model):
+    name = models.CharField(max_length=100)
+    img = models.ImageField(upload_to='pis')
+    desc = models.TextField()
+    price = models.IntegerField()
+    offer = models.BooleanField(default=False)
+
+>then run the below command
+
+python manage.py makemigrations
+
+Step 11:to migrate table into database 
+
+python manage.py sqlmigrate app_name file_name
+
+Step 12:To see in database
+
+python manage.py migrate
 
 Flow:
 ~~~~
