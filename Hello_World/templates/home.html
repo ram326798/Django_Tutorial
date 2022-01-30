@@ -1,12 +1,13 @@
 <!-- name is a variable coming from views.py-->
 {% extends 'base.html' %}
 {% block content %}
-<h1>Hello {{name}}!!!!</h1> 
-<form action="add">
+<h1>Hello {{name}}!!!!</h1>
+<form action="add" method="post"> <!-- Post will be used to avoid data showing in url and also in views method should be POST-->
+    {% csrf_token %} <!-- When we use POST call in order to avoid csrd error-->
     Enter 1st number : <input type="text" name="num1"><br>
     Enter 2st number : <input type="text" name="num2"><br>
     <input type="submit">
 
 </form>
 
-{% endblock  %}
+{% endblock %}
